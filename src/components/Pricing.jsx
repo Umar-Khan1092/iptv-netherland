@@ -1,7 +1,6 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import CTAButton from './CTAButton';
-import { motion } from 'framer-motion';
 
 const plans = [
     {
@@ -93,20 +92,17 @@ const Pricing = () => {
 
                 <div className="grid grid-4">
                     {plans.map((plan, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            className={`card ${plan.popular ? 'popular-card' : ''}`}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            className={`card pricing-card ${plan.popular ? 'popular-card' : ''}`}
                             style={{
                                 position: 'relative',
                                 backgroundColor: 'var(--bg-surface)',
                                 border: plan.popular ? '2px solid var(--accent)' : '1px solid var(--border-color)',
                                 display: 'flex',
                                 flexDirection: 'column',
-                                boxShadow: '0 10px 30px rgba(0,0,0,0.03)'
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
+                                animationDelay: `${index * 0.1}s`
                             }}
                         >
                             {plan.popular && (
@@ -147,7 +143,7 @@ const Pricing = () => {
                             <CTAButton variant="primary" className="w-full">
                                 Kies Dit Pakket
                             </CTAButton>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

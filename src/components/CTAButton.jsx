@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const CTAButton = ({ children, variant = 'primary', style, ...props }) => {
   const baseStyle = {
@@ -42,15 +41,14 @@ const CTAButton = ({ children, variant = 'primary', style, ...props }) => {
   };
 
   return (
-    <motion.button
-      whileHover={{ scale: 1.05, boxShadow: '0 15px 30px rgba(236, 72, 153, 0.4)' }}
-      whileTap={{ scale: 0.95 }}
+    <button
+      className="cta-button"
       style={{ ...baseStyle, ...variants[variant] }}
       onClick={handleClick}
       {...props}
     >
       {children}
-    </motion.button>
+    </button>
   );
 };
 

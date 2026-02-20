@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tv, Activity, Headphones, MonitorPlay } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const benefits = [
     {
@@ -36,19 +35,17 @@ const Benefits = () => {
 
                 <div className="grid grid-4" style={{ gap: '1.5rem' }}>
                     {benefits.map((benefit, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            className="benefit-card"
                             style={{
                                 background: 'var(--gradient-vibrant)',
                                 padding: '3rem 2rem',
                                 borderRadius: '24px',
                                 textAlign: 'left',
                                 boxShadow: '0 20px 40px rgba(173, 20, 87, 0.15)',
-                                color: 'var(--text-on-gradient)'
+                                color: 'var(--text-on-gradient)',
+                                animationDelay: `${index * 0.1}s`
                             }}
                         >
                             <div style={{
@@ -74,7 +71,7 @@ const Benefits = () => {
                                 fontWeight: '500',
                                 opacity: 0.95
                             }}>{benefit.description}</p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
