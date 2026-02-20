@@ -14,9 +14,16 @@ const Footer = () => {
                                 border: '2px solid var(--accent)',
                                 borderRadius: '50%',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                overflow: 'hidden'
+                                overflow: 'hidden',
+                                background: 'var(--gradient-vibrant)'
                             }}>
-                                <img src="/images/nethreland_logo.avif" alt="IPTV NL Logo" width="40" height="40" decoding="async" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="IPTV NL Logo">
+                                    <circle cx="14" cy="14" r="12" stroke="white" strokeWidth="2" fill="none"/>
+                                    <text x="14" y="18" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold" fontFamily="Inter, sans-serif">NL</text>
+                                    <path d="M8 10c0-3 2.5-5 6-5s6 2 6 5" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                                    <circle cx="10" cy="10" r="1.5" fill="white"/>
+                                    <circle cx="18" cy="10" r="1.5" fill="white"/>
+                                </svg>
                             </div>
                             <span>IPTV<span style={{ color: 'var(--accent)' }}>NL</span></span>
                         </Link>
