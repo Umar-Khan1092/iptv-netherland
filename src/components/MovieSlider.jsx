@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const images = [
     '/images/slider/s1.avif',
@@ -32,26 +31,18 @@ const MovieSlider = () => {
                 maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
                 WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
             }}>
-                <motion.div
+                <div
+                    className="movie-slider-track"
                     style={{
                         display: 'flex',
                         gap: '20px',
                         width: 'max-content',
                     }}
-                    animate={{
-                        x: [0, -2560], // 8 images * (300px + 20px gap)
-                    }}
-                    transition={{
-                        duration: 30,
-                        repeat: Infinity,
-                        ease: 'linear',
-                    }}
                 >
                     {duplicatedImages.map((src, index) => (
-                        <motion.div
+                        <div
                             key={index}
                             className="movie-card"
-                            whileHover={{ scale: 1.05, zIndex: 10, filter: 'brightness(1.1)' }}
                             style={{
                                 width: '300px',
                                 height: '450px',
@@ -62,7 +53,7 @@ const MovieSlider = () => {
                                 border: '1px solid var(--border-color)',
                                 backgroundColor: 'var(--bg-light)',
                                 cursor: 'pointer',
-                                transition: 'border-color 0.3s ease'
+                                transition: 'all 0.3s ease'
                             }}
                         >
                             <img
@@ -79,9 +70,9 @@ const MovieSlider = () => {
                                     display: 'block',
                                 }}
                             />
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
 
             <style>{`

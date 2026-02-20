@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
 
 const FeatureShowcase = () => {
@@ -6,12 +5,7 @@ const FeatureShowcase = () => {
         <section className="section-padding" style={{ background: 'var(--gradient-vibrant)', color: 'var(--text-on-gradient)' }}>
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '4rem', alignItems: 'center' }} className="showcase-grid">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
+                    <div className="feature-text">
                         <h2 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: '1', fontWeight: '900' }}>Premium TV-kanalen</h2>
                         <p style={{ fontSize: '1.3rem', marginBottom: '2.5rem', opacity: 1, fontWeight: '500' }}>
                             Ontdek een uitgebreid aanbod van Nederlandse en internationale tv-zenders in één overzichtelijk streamingpakket. Van live sport en nieuws tot films en entertainment – alles direct beschikbaar in 4K.
@@ -36,15 +30,9 @@ const FeatureShowcase = () => {
                         <CTAButton variant="primary" style={{ backgroundColor: 'white', color: 'var(--accent)', padding: '1rem 2rem' }}>
                             Word Nu Lid
                         </CTAButton>
-                    </motion.div>
+                    </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        style={{ position: 'relative' }}
-                    >
+                    <div className="feature-image" style={{ position: 'relative' }}>
                         <div style={{
                             borderRadius: '20px',
                             overflow: 'hidden',
@@ -53,7 +41,7 @@ const FeatureShowcase = () => {
                         }}>
                             <img src="/images/hero_section.avif" alt="Content Showcase" width="768" height="512" decoding="async" loading="lazy" style={{ width: '100%', height: 'auto', display: 'block' }} />
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
             <style>{`

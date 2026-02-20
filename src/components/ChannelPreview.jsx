@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const channels = [
     'NPO 1', 'NPO 2', 'NPO 3', 'RTL 4', 'RTL 5', 'RTL 7', 'SBS 6', 'Veronica',
@@ -22,8 +21,9 @@ const ChannelPreview = () => {
                     gap: '1rem',
                 }}>
                     {channels.map((channel, index) => (
-                        <motion.div
+                        <div
                             key={index}
+                            className="channel-item"
                             style={{
                                 background: 'var(--gradient-vibrant)',
                                 borderRadius: '12px',
@@ -35,10 +35,9 @@ const ChannelPreview = () => {
                                 boxShadow: '0 8px 15px rgba(0,0,0,0.1)',
                                 border: 'none'
                             }}
-                            whileHover={{ scale: 1.05, filter: 'brightness(1.1)' }}
                         >
                             {channel}
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 

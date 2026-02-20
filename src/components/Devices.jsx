@@ -1,6 +1,5 @@
 import React from 'react';
 import { Monitor, Smartphone, Tablet, Cpu, Tv, Laptop } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const devices = [
     { icon: <Tv size={40} />, name: "Smart TV", desc: "Samsung, LG, Sony" },
@@ -22,8 +21,9 @@ const Devices = () => {
 
                 <div className="grid grid-3" style={{ gap: '1.5rem' }}>
                     {devices.map((device, index) => (
-                        <motion.div
+                        <div
                             key={index}
+                            className="device-card"
                             style={{
                                 backgroundColor: 'var(--bg-surface)',
                                 border: '1px solid #E2E8F0',
@@ -33,14 +33,13 @@ const Devices = () => {
                                 alignItems: 'center',
                                 gap: '1.5rem'
                             }}
-                            whileHover={{ borderColor: 'var(--accent)', backgroundColor: 'var(--bg-light)', boxShadow: '0 10px 25px rgba(0,0,0,0.05)' }}
                         >
                             <div style={{ color: 'var(--accent)' }}>{device.icon}</div>
                             <div>
                                 <h3 style={{ fontSize: '1.2rem', marginBottom: '0.25rem', color: 'var(--primary)' }}>{device.name}</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#4A5568' }}>{device.desc}</p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

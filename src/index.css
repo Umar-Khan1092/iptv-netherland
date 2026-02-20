@@ -240,6 +240,128 @@ img {
   }
 }
 
+/* Trust item animation */
+.trust-item {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fade-in-up 0.5s ease forwards;
+}
+
+/* Testimonial card animation */
+.testimonial-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+/* Device card hover effect */
+.device-card {
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.device-card:hover {
+  border-color: var(--accent) !important;
+  background-color: var(--bg-light) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+}
+
+/* Channel item hover effect */
+.channel-item {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.channel-item:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Step card animation */
+.step-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+/* Partner item animation */
+.partner-item {
+  opacity: 0;
+  animation: fade-in 0.5s ease forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Stat card animation */
+.stat-card {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fade-in-scale 0.6s ease forwards;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent) !important;
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Channel slider animations */
+.slider-row {
+  display: flex;
+  gap: 15px;
+  width: max-content;
+}
+
+.slider-row-left {
+  animation: slide-left 40s linear infinite;
+}
+
+.slider-row-right {
+  animation: slide-right 50s linear infinite;
+}
+
+@keyframes slide-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes slide-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Movie slider */
+.movie-slider-track {
+  animation: movie-slide 30s linear infinite;
+}
+
+@keyframes movie-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.movie-card {
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
 /* Common Components */
 .btn {
   display: inline-flex;

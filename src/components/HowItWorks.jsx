@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShoppingCart, CreditCard, Mail, Play } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const steps = [
     {
@@ -59,12 +58,9 @@ const HowItWorks = () => {
                         zIndex: 1
                     }} className="steps-grid">
                         {steps.map((step, index) => (
-                            <motion.div
+                            <div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
+                                className="step-card"
                                 style={{
                                     background: 'var(--gradient-vibrant)',
                                     borderRadius: '24px',
@@ -75,7 +71,8 @@ const HowItWorks = () => {
                                     alignItems: 'center',
                                     gap: '1.5rem',
                                     boxShadow: '0 20px 40px rgba(173, 20, 87, 0.15)',
-                                    color: 'black'
+                                    color: 'black',
+                                    animationDelay: `${index * 0.1}s`
                                 }}
                             >
                                 <div style={{
@@ -116,7 +113,7 @@ const HowItWorks = () => {
 
                                 <h3 style={{ fontSize: '1.2rem', fontWeight: '900', color: 'black', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{step.title}</h3>
                                 <p style={{ color: 'black', fontSize: '1rem', lineHeight: '1.6', fontWeight: '600', opacity: 0.9 }}>{step.desc}</p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

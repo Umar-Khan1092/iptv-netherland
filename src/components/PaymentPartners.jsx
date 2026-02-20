@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const PaymentPartners = () => {
     const partners = ['iDEAL', 'PayPal', 'VISA', 'Mastercard', 'Bitcoin', 'Apple Pay'];
@@ -12,16 +11,18 @@ const PaymentPartners = () => {
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', opacity: 0.5 }}>
                     {partners.map((p, i) => (
-                        <motion.span
+                        <span
                             key={i}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            style={{ fontSize: '0.9rem', fontWeight: '900', letterSpacing: '1px' }}
+                            className="partner-item"
+                            style={{ 
+                                fontSize: '0.9rem', 
+                                fontWeight: '900', 
+                                letterSpacing: '1px',
+                                animationDelay: `${i * 0.1}s`
+                            }}
                         >
                             {p}
-                        </motion.span>
+                        </span>
                     ))}
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShieldCheck, Zap, Headphones, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const TrustBar = () => {
     const items = [
@@ -15,17 +14,22 @@ const TrustBar = () => {
             <div className="container">
                 <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
                     {items.map((item, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-muted)', fontWeight: '600', fontSize: '0.9rem' }}
+                            className="trust-item"
+                            style={{ 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                gap: '10px', 
+                                color: 'var(--text-muted)', 
+                                fontWeight: '600', 
+                                fontSize: '0.9rem',
+                                animationDelay: `${index * 0.1}s`
+                            }}
                         >
                             <span style={{ color: 'var(--accent)' }}>{item.icon}</span>
                             <span>{item.text}</span>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const testimonials = [
     {
@@ -44,19 +43,17 @@ const Testimonials = () => {
                     gap: '2rem'
                 }}>
                     {testimonials.map((t, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            className="testimonial-card"
                             style={{
                                 backgroundColor: 'var(--bg-surface)',
                                 padding: '2.5rem',
                                 borderRadius: '24px',
                                 boxShadow: '0 10px 40px rgba(0,0,0,0.05)',
                                 border: '1px solid var(--border-color)',
-                                position: 'relative'
+                                position: 'relative',
+                                animationDelay: `${index * 0.1}s`
                             }}
                         >
                             <div style={{ display: 'flex', gap: '4px', marginBottom: '1.5rem' }}>
@@ -89,7 +86,7 @@ const Testimonials = () => {
                                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Geverifieerde Klant</p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

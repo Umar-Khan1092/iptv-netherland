@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
     {
@@ -76,18 +75,17 @@ const FAQItem = ({ question, answer }) => {
                 {isOpen ? <Minus size={20} color="var(--accent)" aria-hidden="true" /> : <Plus size={20} color="var(--accent)" aria-hidden="true" />}
             </button>
 
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        style={{ overflow: 'hidden' }}
-                    >
-                        <p style={{ color: 'var(--text-muted)', paddingBottom: '1rem', lineHeight: '1.8' }}>{answer}</p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <div 
+                className={`faq-answer ${isOpen ? 'open' : ''}`}
+                style={{ 
+                    overflow: 'hidden',
+                    maxHeight: isOpen ? '500px' : '0',
+                    opacity: isOpen ? 1 : 0,
+                    transition: 'max-height 0.3s ease, opacity 0.3s ease'
+                }}
+            >
+                <p style={{ color: 'var(--text-muted)', paddingBottom: '1rem', lineHeight: '1.8' }}>{answer}</p>
+            </div>
         </div>
     );
 };

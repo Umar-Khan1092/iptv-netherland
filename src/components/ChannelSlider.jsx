@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const channels = [
     'NPO 1', 'NPO 2', 'NPO 3', 'RTL 4', 'RTL 5', 'RTL 7', 'SBS 6', 'Veronica',
@@ -31,10 +30,9 @@ const ChannelSlider = () => {
             }}>
                 {/* First Row - Moving Right to Left */}
                 <div style={{ display: 'flex', width: '100%', overflow: 'hidden' }}>
-                    <motion.div
+                    <div
+                        className="slider-row slider-row-left"
                         style={{ display: 'flex', gap: '15px', width: 'max-content' }}
-                        animate={{ x: [0, -1800] }}
-                        transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
                     >
                         {duplicatedChannels.map((channel, index) => (
                             <div
@@ -56,15 +54,14 @@ const ChannelSlider = () => {
                                 {channel}
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Second Row - Moving Left to Right */}
                 <div style={{ display: 'flex', width: '100%', overflow: 'hidden' }}>
-                    <motion.div
+                    <div
+                        className="slider-row slider-row-right"
                         style={{ display: 'flex', gap: '15px', width: 'max-content' }}
-                        animate={{ x: [-1800, 0] }}
-                        transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
                     >
                         {[...duplicatedChannels].reverse().map((channel, index) => (
                             <div
@@ -86,7 +83,7 @@ const ChannelSlider = () => {
                                 {channel}
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </div>
 
