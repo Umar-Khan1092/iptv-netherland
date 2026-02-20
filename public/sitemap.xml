@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://iptvnederland.fun/</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Pakketten / Pricing -->
+  <url>
+    <loc>https://iptvnederland.fun/pricing</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Zenderlijst / Channels -->
+  <url>
+    <loc>https://iptvnederland.fun/channels</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Apparaten / Devices -->
+  <url>
+    <loc>https://iptvnederland.fun/devices</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Installatie Gids -->
+  <url>
+    <loc>https://iptvnederland.fun/installation-guide</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://iptvnederland.fun/faq</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://iptvnederland.fun/contact</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy -->
+  <url>
+    <loc>https://iptvnederland.fun/privacy</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Algemene Voorwaarden -->
+  <url>
+    <loc>https://iptvnederland.fun/terms</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Cookiebeleid -->
+  <url>
+    <loc>https://iptvnederland.fun/cookies</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Disclaimer -->
+  <url>
+    <loc>https://iptvnederland.fun/disclaimer</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

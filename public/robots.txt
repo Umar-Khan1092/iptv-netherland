@@ -1,0 +1,12 @@
+# robots.txt for https://iptvnederland.fun
+# Generated for Google Search Console
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (add more if needed)
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://iptvnederland.fun/sitemap.xml
