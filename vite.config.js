@@ -41,10 +41,13 @@ export default defineConfig({
         esbuildOptions: {
             drop: ['console', 'debugger'],
         },
-        // CSS optimization
+        // CSS optimization - inline critical CSS, defer non-critical
         cssMinify: true,
+        cssCodeSplit: false,
         // Source maps for debugging (disable in production for smaller builds)
         sourcemap: false,
+        // Assets inline limit - inline small assets
+        assetsInlineLimit: 4096,
     },
     // Optimize dependencies pre-bundling
     optimizeDeps: {
