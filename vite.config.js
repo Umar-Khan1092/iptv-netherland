@@ -1,6 +1,24 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// Plugin to move CSS links to end of body and remove animation preload
+const optimizeHtml = () => ({
+    name: 'optimize-html',
+    transformIndexHtml(html) {
+        // Remove animation modulepreload (not needed for initial render)
+        html = html.replace(/\s*<link rel="modulepreload"[^>]*animation[^>]*>\n?/, '');
+        
+        // Move all CSS links to end of body
+        const cssLinks = html.match(/<link[^>]*rel="stylesheet"[^>]*>/g) || [];
+        cssLinks.forEach(link => {
+            html = html.replace(link, '');
+            html = html.replace('</body>', `  ${link}\n</body>`);
+        });
+        
+        return html;
+    }
+});
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
@@ -8,6 +26,7 @@ export default defineConfig({
             // Optimize React for production
             jsxRuntime: 'automatic',
         }),
+        optimizeHtml(),
     ],
     build: {
         // Optimize chunk size
