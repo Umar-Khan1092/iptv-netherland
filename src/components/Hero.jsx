@@ -1,7 +1,7 @@
 import React from 'react';
 import { Play, ShieldCheck, Zap } from 'lucide-react';
 import CTAButton from './CTAButton';
-import { motion } from 'framer-motion';
+
 const Hero = () => {
     return (
         <section className="hero-section" style={{
@@ -47,11 +47,7 @@ const Hero = () => {
 
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '900px', margin: '0 auto' }} className="hero-grid">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
+                    <div className="hero-animate">
                         <div className="hero-badge" style={{
                             display: 'inline-flex',
                             alignItems: 'center',
@@ -118,7 +114,7 @@ const Hero = () => {
                                 <span style={{ fontSize: '1rem' }}>Directe Activatie</span>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
 
@@ -141,6 +137,13 @@ const Hero = () => {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        @keyframes hero-fade-in {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-animate {
+            animation: hero-fade-in 0.8s ease-out forwards;
         }
       `}</style>
         </section>

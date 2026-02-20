@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import Hero from '../components/Hero';
 
 // Lazy load below-the-fold components for better performance
@@ -14,6 +14,44 @@ const ChannelSlider = React.lazy(() => import('../components/ChannelSlider'));
 
 // Simple fallback for lazy loaded sections
 const SectionFallback = () => <div style={{ minHeight: '200px' }} />;
+
+// Intersection Observer hook for viewport-based loading
+const useInView = (options = {}) => {
+    const ref = useRef(null);
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsInView(true);
+                observer.disconnect();
+            }
+        }, { threshold: 0.1, rootMargin: '50px', ...options });
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    return [ref, isInView];
+};
+
+// Lazy section wrapper that only loads when in viewport
+const LazySection = ({ children, minHeight = '200px' }) => {
+    const [ref, isInView] = useInView();
+
+    return (
+        <div ref={ref} style={{ minHeight }}>
+            {isInView ? (
+                <Suspense fallback={<SectionFallback />}>
+                    {children}
+                </Suspense>
+            ) : null}
+        </div>
+    );
+};
 
 const Home = () => {
     return (
@@ -42,30 +80,30 @@ const Home = () => {
                 </div>
             </div>
 
-            <Suspense fallback={<SectionFallback />}>
+            <LazySection minHeight="600px">
                 <Pricing />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}>
+            </LazySection>
+            <LazySection minHeight="500px">
                 <MovieSlider />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}>
+            </LazySection>
+            <LazySection minHeight="400px">
                 <ChannelSlider />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}>
+            </LazySection>
+            <LazySection minHeight="500px">
                 <Benefits />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}>
+            </LazySection>
+            <LazySection minHeight="400px">
                 <Devices />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}>
+            </LazySection>
+            <LazySection minHeight="500px">
                 <Testimonials />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}>
+            </LazySection>
+            <LazySection minHeight="500px">
                 <FeatureShowcase />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}>
+            </LazySection>
+            <LazySection minHeight="600px">
                 <FAQ />
-            </Suspense>
+            </LazySection>
         </main>
     );
 };
