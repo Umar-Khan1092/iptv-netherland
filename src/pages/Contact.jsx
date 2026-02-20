@@ -96,7 +96,7 @@ const Contact = () => {
                             <h3 style={{ fontSize: '1.5rem', color: 'var(--primary)', marginBottom: '2rem', fontWeight: '800' }}>Contactgegevens</h3>
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                <a href="mailto:umarattique9@gmail.com" style={{
+                                <a href="mailto:support@iptvnederland.fun" style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '1.2rem',
@@ -119,7 +119,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: '600' }}>E-mail Ons</p>
-                                        <p style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: '700' }}>umarattique9@gmail.com</p>
+                                        <p style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: '700' }}>support@iptvnederland.fun</p>
                                     </div>
                                 </a>
 

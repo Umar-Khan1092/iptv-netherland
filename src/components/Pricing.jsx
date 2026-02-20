@@ -138,7 +138,7 @@ const Pricing = () => {
                             <ul style={{ marginBottom: '2rem', flexGrow: 1 }}>
                                 {plan.features.map((feature, idx) => (
                                     <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.75rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
-                                        <Check size={16} color="var(--accent)" />
+                                        <Check size={16} color="var(--accent)" aria-hidden="true" />
                                         <span>{feature}</span>
                                     </li>
                                 ))}
@@ -154,11 +154,26 @@ const Pricing = () => {
 
             <style>{`
         .popular-card {
-          background: var(--bg-light) !important;
-          box-shadow: 0 20px 40px rgba(236, 72, 153, 0.1) !important;
-          border: 2px solid var(--accent) !important;
+          background: rgba(255, 255, 255, 0.9) !important;
+          box-shadow: 0 25px 50px rgba(173, 20, 87, 0.15) !important;
+          border: 2px solid transparent !important;
+          background-image: linear-gradient(white, white), var(--gradient-vibrant) !important;
+          background-origin: border-box !important;
+          background-clip: padding-box, border-box !important;
+          transform: scale(1.05);
+          z-index: 10;
         }
         .w-full { width: 100%; }
+        
+        .card {
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        }
       `}</style>
         </section>
     );

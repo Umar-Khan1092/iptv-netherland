@@ -220,7 +220,7 @@ const InstallationGuide = () => {
                         Onze supportmedewerkers staan klaar om u te helpen bij het configureren van uw apparaat.
                         Neem direct contact op via WhatsApp.
                     </p>
-                    <a href="https://wa.me/31000000000"
+                    <a href="https://wa.me/923277343906"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

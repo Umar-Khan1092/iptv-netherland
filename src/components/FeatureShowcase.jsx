@@ -1,6 +1,4 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import heroImage from '../assets/images/hero_section.webp';
 import CTAButton from './CTAButton';
 
 const FeatureShowcase = () => {
@@ -16,8 +14,9 @@ const FeatureShowcase = () => {
                     >
                         <h2 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', lineHeight: '1', fontWeight: '900' }}>Premium TV-kanalen</h2>
                         <p style={{ fontSize: '1.3rem', marginBottom: '2.5rem', opacity: 1, fontWeight: '500' }}>
-                            Ontdek een uitgebreid aanbod van Nederlandse en internationale tv-zenders in één overzichtelijk streamingpakket. Van live sport en nieuws tot films en entertainment – alles direct beschikbaar.
-                            Altijd en Overal Toegang tot Topcontent
+                            Ontdek een uitgebreid aanbod van Nederlandse en internationale tv-zenders in één overzichtelijk streamingpakket. Van live sport en nieuws tot films en entertainment – alles direct beschikbaar in 4K.
+                        </p>
+                        <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', opacity: 0.9, fontWeight: '400' }}>
                             Stream jouw favoriete programma’s waar je ook bent. Of je nu kijkt op je Smart TV thuis of via je smartphone onderweg, je geniet altijd van hoogwaardige entertainment zonder onderbrekingen.
                         </p>
                         <ul style={{ marginBottom: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -34,7 +33,7 @@ const FeatureShowcase = () => {
                                 Vloeiende streaming zonder buffering
                             </li>
                         </ul>
-                        <CTAButton variant="primary" style={{ backgroundColor: 'var(--text-on-gradient)', color: 'var(--secondary)', padding: '1rem 2rem' }}>
+                        <CTAButton variant="primary" style={{ backgroundColor: 'white', color: 'var(--accent)', padding: '1rem 2rem' }}>
                             Word Nu Lid
                         </CTAButton>
                     </motion.div>
@@ -52,7 +51,7 @@ const FeatureShowcase = () => {
                             boxShadow: '0 30px 60px rgba(0,0,0,0.3)',
                             border: '10px solid rgba(243, 244, 246, 0.1)'
                         }}>
-                            <img src={heroImage} alt="Content Showcase" style={{ width: '100%', display: 'block' }} />
+                            <img src="/images/hero_section.avif" alt="Content Showcase" width="800" height="450" style={{ width: '100%', display: 'block' }} />
                         </div>
                     </motion.div>
                 </div>

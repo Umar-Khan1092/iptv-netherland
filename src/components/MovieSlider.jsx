@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import s1 from '../assets/slider/s1.avif';
-import s2 from '../assets/slider/s2.avif';
-import s3 from '../assets/slider/s3.avif';
-import s4 from '../assets/slider/s4.avif';
-import s5 from '../assets/slider/s5.avif';
-import s6 from '../assets/slider/s6.avif';
-
-const images = [s1, s2, s3, s4, s5, s6];
+const images = [
+    '/images/slider/s1.avif',
+    '/images/slider/s2.avif',
+    '/images/slider/s3.avif',
+    '/images/slider/s4.avif',
+    '/images/slider/s5.avif',
+    '/images/slider/s6.avif'
+];
 
 const MovieSlider = () => {
     // We duplicate the images to create a seamless infinite loop
@@ -25,7 +25,13 @@ const MovieSlider = () => {
                 </div>
             </div>
 
-            <div style={{ position: 'relative', width: '100%', display: 'flex' }}>
+            <div style={{
+                position: 'relative',
+                width: '100%',
+                display: 'flex',
+                maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)'
+            }}>
                 <motion.div
                     style={{
                         display: 'flex',

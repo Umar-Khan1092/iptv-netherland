@@ -56,6 +56,7 @@ const FAQItem = ({ question, answer }) => {
         <div style={{ marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
+                aria-expanded={isOpen}
                 style={{
                     width: '100%',
                     display: 'flex',
@@ -63,7 +64,7 @@ const FAQItem = ({ question, answer }) => {
                     alignItems: 'center',
                     background: 'none',
                     border: 'none',
-                    color: 'var(--text-dark)',
+                    color: 'var(--text-main)',
                     fontSize: '1.2rem',
                     fontWeight: '600',
                     textAlign: 'left',
@@ -72,7 +73,7 @@ const FAQItem = ({ question, answer }) => {
                 }}
             >
                 <span>{question}</span>
-                {isOpen ? <Minus size={20} color="var(--accent)" /> : <Plus size={20} color="var(--accent)" />}
+                {isOpen ? <Minus size={20} color="var(--accent)" aria-hidden="true" /> : <Plus size={20} color="var(--accent)" aria-hidden="true" />}
             </button>
 
             <AnimatePresence>

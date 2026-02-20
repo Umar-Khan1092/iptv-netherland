@@ -2,8 +2,6 @@ import React from 'react';
 import { Play, ShieldCheck, Zap } from 'lucide-react';
 import CTAButton from './CTAButton';
 import { motion } from 'framer-motion';
-import heroImage from '../assets/images/hero_section.avif';
-
 const Hero = () => {
     return (
         <section className="hero-section" style={{
@@ -17,8 +15,10 @@ const Hero = () => {
         }}>
             {/* Optimized LCP Image */}
             <img
-                src={heroImage}
-                alt=""
+                src="/images/hero_section.avif"
+                alt="Premium IPTV Nederland - Beste IPTV Service"
+                width="1920"
+                height="1080"
                 style={{
                     position: 'absolute',
                     top: 0,
@@ -69,6 +69,28 @@ const Hero = () => {
                             <span>#1 IPTV AANBIEDER IN NEDERLAND</span>
                         </div>
 
+                        {/* Live Server Status */}
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            marginBottom: '1.5rem',
+                            color: 'white',
+                            fontSize: '0.9rem',
+                            fontWeight: '600',
+                            justifyContent: 'center'
+                        }}>
+                            <div style={{
+                                width: '8px',
+                                height: '8px',
+                                background: '#25D366',
+                                borderRadius: '50%',
+                                boxShadow: '0 0 10px #25D366',
+                                animation: 'pulse-green 2s infinite'
+                            }}></div>
+                            <span style={{ opacity: 0.9 }}>Server Status: <span style={{ color: '#25D366', fontWeight: '800' }}>LIVE</span></span>
+                        </div>
+
                         <h1 className="hero-title" style={{ fontSize: '4.8rem', lineHeight: '1', marginBottom: '2rem', letterSpacing: '-3px', fontWeight: '900' }}>
                             IPTV Kopen in <span style={{ background: 'var(--gradient-vibrant)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Nederland – 4K Abonnement </span> met 30.000+ Zenders in Nederland
                         </h1>
@@ -113,6 +135,12 @@ const Hero = () => {
           .hero-cta-wrap { flex-direction: column !important; align-items: center !important; gap: 0.75rem !important; }
           .hero-cta-wrap a, .hero-cta-wrap button { width: 100% !important; justify-content: center !important; font-size: 1rem !important; }
           .hero-trust { flex-direction: column !important; gap: 0.75rem !important; }
+        }
+        
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
       `}</style>
         </section>

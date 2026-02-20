@@ -30,7 +30,7 @@ const ChannelPreview = () => {
                                 padding: '1.2rem 1rem',
                                 textAlign: 'center',
                                 fontWeight: '800',
-                                color: 'black',
+                                color: 'var(--text-on-gradient)',
                                 fontSize: '0.9rem',
                                 boxShadow: '0 8px 15px rgba(0,0,0,0.1)',
                                 border: 'none'

@@ -20,7 +20,15 @@ const ChannelSlider = () => {
                 </div>
             </div>
 
-            <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div style={{
+                position: 'relative',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '20px',
+                maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+            }}>
                 {/* First Row - Moving Right to Left */}
                 <div style={{ display: 'flex', width: '100%', overflow: 'hidden' }}>
                     <motion.div
@@ -37,7 +45,7 @@ const ChannelSlider = () => {
                                     padding: '1.2rem 2rem',
                                     textAlign: 'center',
                                     fontWeight: '900',
-                                    color: 'black',
+                                    color: 'var(--text-on-gradient)',
                                     fontSize: '1rem',
                                     boxShadow: '0 8px 15px rgba(0,0,0,0.1)',
                                     minWidth: '180px',
@@ -67,7 +75,7 @@ const ChannelSlider = () => {
                                     padding: '1.2rem 2rem',
                                     textAlign: 'center',
                                     fontWeight: '900',
-                                    color: 'black',
+                                    color: 'var(--text-on-gradient)',
                                     fontSize: '1rem',
                                     boxShadow: '0 8px 15px rgba(0,0,0,0.1)',
                                     minWidth: '180px',

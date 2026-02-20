@@ -48,7 +48,7 @@ const Benefits = () => {
                                 borderRadius: '24px',
                                 textAlign: 'left',
                                 boxShadow: '0 20px 40px rgba(173, 20, 87, 0.15)',
-                                color: 'black'
+                                color: 'var(--text-on-gradient)'
                             }}
                         >
                             <div style={{
