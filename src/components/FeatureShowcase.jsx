@@ -51,7 +51,7 @@ const FeatureShowcase = () => {
                             boxShadow: '0 30px 60px rgba(0,0,0,0.3)',
                             border: '10px solid rgba(243, 244, 246, 0.1)'
                         }}>
-                            <img src="/images/hero_section.avif" alt="Content Showcase" width="800" height="450" style={{ width: '100%', display: 'block' }} />
+                            <img src="/images/hero_section.avif" alt="Content Showcase" width="768" height="512" decoding="async" loading="lazy" style={{ width: '100%', height: 'auto', display: 'block' }} />
                         </div>
                     </motion.div>
                 </div>

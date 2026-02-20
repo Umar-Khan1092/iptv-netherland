@@ -38,7 +38,7 @@ const CTAButton = ({ children, variant = 'primary', style, ...props }) => {
   };
 
   const handleClick = (e) => {
-    window.open('https://wa.me/923277343906?text=Hallo,%20ik%20heb%20interesse%20in%20uw%20IPTV%20service.%20Kunt%20u%20mij%20meer%20informatie%20geven?', '_blank');
+    window.open('https://wa.me/447412300833?text=Hallo,%20ik%20heb%20interesse%20in%20uw%20IPTV%20service.%20Kunt%20u%20mij%20meer%20informatie%20geven?', '_blank');
   };
 
   return (

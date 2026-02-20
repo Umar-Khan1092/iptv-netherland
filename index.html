@@ -29,6 +29,14 @@
   <!-- ═══ Canonical URL ═══ -->
   <link rel="canonical" href="https://iptvnederland.fun/" />
 
+  <!-- ═══ Additional SEO Meta Tags ═══ -->
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="geo.region" content="NL" />
+  <meta name="geo.placename" content="Netherlands" />
+  <meta name="geo.position" content="52.1326;5.2913" />
+  <meta name="ICBM" content="52.1326, 5.2913" />
+
   <!-- ═══ Favicon ═══ -->
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="apple-touch-icon" href="/vite.svg" />
@@ -70,6 +78,7 @@
         "contactType": "customer support",
         "availableLanguage": ["Dutch", "English"],
         "email": "support@iptvnederland.fun",
+        "telephone": "+44-7412-300833",
         "url": "https://iptvnederland.fun/contact"
       },
       "sameAs": []
@@ -105,7 +114,7 @@
         "@type": "Brand",
         "name": "IPTVNEDERLAND.FUN"
       },
-      "url": "https://iptvnederland.fun/pricing",
+      "url": "https://iptvnederland.fun/",
       "offers": [
         {
           "@type": "Offer",
@@ -113,7 +122,7 @@
           "price": "10",
           "priceCurrency": "EUR",
           "availability": "https://schema.org/InStock",
-          "url": "https://iptvnederland.fun/pricing"
+          "url": "https://iptvnederland.fun/"
         },
         {
           "@type": "Offer",
@@ -121,7 +130,7 @@
           "price": "25",
           "priceCurrency": "EUR",
           "availability": "https://schema.org/InStock",
-          "url": "https://iptvnederland.fun/pricing"
+          "url": "https://iptvnederland.fun/"
         },
         {
           "@type": "Offer",
@@ -129,7 +138,7 @@
           "price": "40",
           "priceCurrency": "EUR",
           "availability": "https://schema.org/InStock",
-          "url": "https://iptvnederland.fun/pricing"
+          "url": "https://iptvnederland.fun/"
         },
         {
           "@type": "Offer",
@@ -137,23 +146,39 @@
           "price": "70",
           "priceCurrency": "EUR",
           "availability": "https://schema.org/InStock",
-          "url": "https://iptvnederland.fun/pricing"
+          "url": "https://iptvnederland.fun/"
         }
       ]
     }
     </script>
 
+  <!-- ═══ Critical CSS Inline (Render Blocking Fix) ═══ -->
+  <style>
+    /* Critical CSS for above-the-fold content */
+    :root{--primary:#2D1B4D;--accent:#C2185B;--secondary:#D84315;--text-on-gradient:#F9FAFB;--text-main:#1A1210;--bg-light:#E5E7EB;--bg-surface:#F3F4F6;--border-color:#D1D5DB}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg-light);color:var(--text-main);line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    .container{width:100%;max-width:1320px;margin:0 auto;padding:0 1.5rem}
+    @media(max-width:640px){.container{padding:0 1rem}}
+  </style>
+
   <!-- ═══ Font Loading Strategy ═══ -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
-    media="print" onload="this.media='all'" />
+    media="print" onload="this.media='all';this.onload=null;" />
   <noscript>
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" />
   </noscript>
-  <link rel="preload" as="image" href="/images/hero_section.avif" fetchpriority="high" />
-  <link rel="preload" as="image" href="/images/nethreland_logo.avif" fetchpriority="high" />
+
+  <!-- ═══ Preload Critical Images ═══ -->
+  <link rel="preload" as="image" href="/images/hero_section.avif" fetchpriority="high" type="image/avif" />
+  <link rel="preload" as="image" href="/images/nethreland_logo.avif" fetchpriority="high" type="image/avif" />
+
+  <!-- ═══ Prefetch Non-Critical Resources ═══ -->
+  <link rel="prefetch" href="/src/main.jsx" as="script" />
 </head>
 
 <body>

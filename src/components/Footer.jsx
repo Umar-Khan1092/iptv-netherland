@@ -16,7 +16,7 @@ const Footer = () => {
                                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 overflow: 'hidden'
                             }}>
-                                <img src="/images/nethreland_logo.avif" alt="IPTV NL Logo" width="40" height="40" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                <img src="/images/nethreland_logo.avif" alt="IPTV NL Logo" width="40" height="40" decoding="async" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>
                             <span>IPTV<span style={{ color: 'var(--accent)' }}>NL</span></span>
                         </Link>
@@ -61,7 +61,7 @@ const Footer = () => {
                             </li>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 <Phone size={18} color="var(--accent)" />
-                                <a href="https://wa.me/923277343906" style={{ color: '#E2E8F0' }}>+92 3277343906</a>
+                                <a href="https://wa.me/447412300833" style={{ color: '#E2E8F0' }}>+44 7412 300833</a>
                             </li>
                             <li style={{ display: 'flex', alignItems: 'start', gap: '10px' }}>
                                 <MapPin size={18} color="var(--accent)" />

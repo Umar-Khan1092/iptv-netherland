@@ -4,9 +4,16 @@
 User-agent: *
 Allow: /
 
-# Disallow admin or private paths (add more if needed)
+# Disallow admin or private paths
 Disallow: /admin/
 Disallow: /private/
+Disallow: /api/
+
+# Crawl-delay for bots
+Crawl-delay: 10
 
 # Sitemap location
 Sitemap: https://iptvnederland.fun/sitemap.xml
+
+# Host
+Host: https://iptvnederland.fun

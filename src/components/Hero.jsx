@@ -13,12 +13,13 @@ const Hero = () => {
             color: 'var(--text-on-gradient)',
             overflow: 'hidden'
         }}>
-            {/* Optimized LCP Image */}
+            {/* Optimized LCP Image - Aspect ratio matches actual image (1536x1024 = 1.5) */}
             <img
                 src="/images/hero_section.avif"
                 alt="Premium IPTV Nederland - Beste IPTV Service"
-                width="1920"
-                height="1080"
+                width="1536"
+                height="1024"
+                decoding="async"
                 style={{
                     position: 'absolute',
                     top: 0,
@@ -29,7 +30,6 @@ const Hero = () => {
                     zIndex: 0
                 }}
                 fetchpriority="high"
-                loading="eager"
             />
 
             {/* Darker Overlay for better text clarity */}

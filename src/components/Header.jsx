@@ -81,7 +81,7 @@ const Header = () => {
                             border: scrolled ? '2px solid rgba(255,255,255,0.8)' : '2px solid var(--accent)',
                             boxShadow: scrolled ? 'none' : '0 4px 12px rgba(173, 20, 87, 0.2)'
                         }}>
-                            <img src="/images/nethreland_logo.avif" alt="IPTV NL Logo" width="45" height="45" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src="/images/nethreland_logo.avif" alt="IPTV NL Logo" width="45" height="45" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <span style={{
                             fontSize: '1.4rem', fontWeight: '900',

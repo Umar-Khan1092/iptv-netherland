@@ -123,7 +123,7 @@ const Contact = () => {
                                     </div>
                                 </a>
 
-                                <a href="https://wa.me/923277343906" target="_blank" rel="noopener noreferrer" style={{
+                                <a href="https://wa.me/447412300833" target="_blank" rel="noopener noreferrer" style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '1.2rem',
@@ -146,7 +146,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: '600' }}>WhatsApp</p>
-                                        <p style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: '700' }}>+92 327 7343906</p>
+                                        <p style={{ fontSize: '1.05rem', color: 'var(--primary)', fontWeight: '700' }}>+44 7412 300833</p>
                                     </div>
                                 </a>
 

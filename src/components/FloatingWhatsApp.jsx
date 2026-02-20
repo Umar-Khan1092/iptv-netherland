@@ -4,7 +4,7 @@ const FloatingWhatsApp = () => {
     return (
         <>
             <a
-                href="https://wa.me/923277343906?text=Hallo,%20ik%20heb%20interesse%20in%20uw%20IPTV%20service.%20Kunt%20u%20mij%20meer%20informatie%20geven?"
+                href="https://wa.me/447412300833?text=Hallo,%20ik%20heb%20interesse%20in%20uw%20IPTV%20service.%20Kunt%20u%20mij%20meer%20informatie%20geven?"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

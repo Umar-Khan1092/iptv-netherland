@@ -17,10 +17,6 @@ const ScrollToTop = () => {
 };
 
 // Lazy load non-critical pages
-const Pricing = React.lazy(() => import('./components/Pricing'));
-const ChannelPreview = React.lazy(() => import('./components/ChannelPreview'));
-const Devices = React.lazy(() => import('./components/Devices'));
-const FAQ = React.lazy(() => import('./components/FAQ'));
 const InstallationGuide = React.lazy(() => import('./pages/InstallationGuide'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Privacy = React.lazy(() => import('./pages/Privacy'));
@@ -61,10 +57,6 @@ const App = () => {
       <React.Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pricing" element={<div style={{ paddingTop: '80px' }}><Pricing /></div>} />
-          <Route path="/channels" element={<div style={{ paddingTop: '80px' }}><ChannelPreview /></div>} />
-          <Route path="/devices" element={<div style={{ paddingTop: '80px' }}><Devices /></div>} />
-          <Route path="/faq" element={<div style={{ paddingTop: '80px' }}><FAQ /></div>} />
           <Route path="/installation-guide" element={<InstallationGuide />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/free-trial" element={<div style={{ paddingTop: '120px', textAlign: 'center' }} className="container"><h2>Gratis Proefperiode</h2><p>Vraag vandaag nog uw 24-uurs gratis test aan.</p></div>} />

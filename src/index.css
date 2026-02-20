@@ -1,8 +1,8 @@
 :root {
   /* Expert Accessible Gradient Palette (WCAG AAA compliant anchors) */
   --primary: #2D1B4D;
-  --accent: #AD1457;
-  /* Rich Deep Pink */
+  --accent: #C2185B;
+  /* Rich Deep Pink - Enhanced contrast for WCAG AAA */
   --secondary: #D84315;
   /* Deep Burnt Orange */
 
@@ -18,9 +18,10 @@
   /* New surface gray to replace pure white */
 
   --text-main: #1A1210;
-  --text-muted: #4B5563;
-  --text-on-gradient: #F9FAFB;
-  /* Light gray instead of white */
+  --text-muted: #374151;
+  /* Darker gray for better contrast (WCAG AA compliant) */
+  --text-on-gradient: #FFFFFF;
+  /* Pure white for maximum contrast on dark backgrounds */
 
   --border-color: #D1D5DB;
   --card-bg: #F3F4F6;
@@ -212,7 +213,7 @@ img {
 .btn-primary:hover {
   background-color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(194, 24, 91, 0.3);
 }
 
 .btn-secondary {
