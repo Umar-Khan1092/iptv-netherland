@@ -9,6 +9,22 @@ const Contact = () => {
         message: ''
     });
 
+    // Contact Schema for Rank Math optimization
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact IPTVNEDERLAND.FUN",
+        "description": "Neem contact op met onze 24/7 klantenservice voor al uw IPTV vragen.",
+        "url": "https://iptvnederland.fun/contact",
+        "mainEntity": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@iptvnederland.fun",
+            "telephone": "+44-7412-300833",
+            "availableLanguage": ["Dutch", "English"]
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission logic here
@@ -53,6 +69,10 @@ const Contact = () => {
                     filter: 'blur(60px)',
                     opacity: '0.1'
                 }}></div>
+
+                <script type="application/ld+json">
+                    {JSON.stringify(schemaData)}
+                </script>
 
                 <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
                     <h1 style={{

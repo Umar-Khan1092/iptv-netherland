@@ -75,9 +75,9 @@ const FAQItem = ({ question, answer }) => {
                 {isOpen ? <Minus size={20} color="var(--accent)" aria-hidden="true" /> : <Plus size={20} color="var(--accent)" aria-hidden="true" />}
             </button>
 
-            <div 
+            <div
                 className={`faq-answer ${isOpen ? 'open' : ''}`}
-                style={{ 
+                style={{
                     overflow: 'hidden',
                     maxHeight: isOpen ? '500px' : '0',
                     opacity: isOpen ? 1 : 0,
@@ -91,8 +91,25 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQ = () => {
+    // Generate JSON-LD for Rank Math Schema
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
         <section className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
+            <script type="application/ld+json">
+                {JSON.stringify(schemaData)}
+            </script>
             <div className="container" style={{ maxWidth: '800px' }}>
                 <div className="section-title">
                     <h2>Veelgestelde Vragen</h2>
