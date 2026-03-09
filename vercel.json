@@ -1,7 +1,73 @@
 {
+    "framework": "vite",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
     "cleanUrls": true,
     "trailingSlash": false,
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
+                }
+            ]
+        }
+    ],
     "rewrites": [
+        {
+            "source": "/installation-guide",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/pricing",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/faq",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/contact",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/privacy",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/terms",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/cookies",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/disclaimer",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/channels",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/devices",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/features",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/free-trial",
+            "destination": "/index.html"
+        },
         {
             "source": "/(.*)",
             "destination": "/index.html"

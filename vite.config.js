@@ -1,5 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
+import { writeFileSync, readFileSync, existsSync } from 'fs'
+
+// Plugin to copy index.html → 200.html for SPA fallback (Vercel/Surge/Render)
+const spaFallback = () => ({
+    name: 'spa-fallback',
+    closeBundle() {
+        const distDir = resolve(__dirname, 'dist');
+        const indexPath = resolve(distDir, 'index.html');
+        const fallbackPath = resolve(distDir, '200.html');
+        if (existsSync(indexPath)) {
+            writeFileSync(fallbackPath, readFileSync(indexPath, 'utf-8'));
+            console.log('✅ Created 200.html SPA fallback');
+        }
+    }
+});
 
 // Plugin to move CSS links to end of body and remove animation preload
 const optimizeHtml = () => ({
@@ -7,14 +23,14 @@ const optimizeHtml = () => ({
     transformIndexHtml(html) {
         // Remove animation modulepreload (not needed for initial render)
         html = html.replace(/\s*<link rel="modulepreload"[^>]*animation[^>]*>\n?/, '');
-        
+
         // Move all CSS links to end of body
         const cssLinks = html.match(/<link[^>]*rel="stylesheet"[^>]*>/g) || [];
         cssLinks.forEach(link => {
             html = html.replace(link, '');
             html = html.replace('</body>', `  ${link}\n</body>`);
         });
-        
+
         return html;
     }
 });
@@ -27,7 +43,9 @@ export default defineConfig({
             jsxRuntime: 'automatic',
         }),
         optimizeHtml(),
+        spaFallback(),
     ],
+    appType: 'spa',
     build: {
         // Optimize chunk size
         chunkSizeWarningLimit: 1000,
