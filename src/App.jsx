@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 // Regular imports for critical core components
 import Home from './pages/Home';
+import InstallationGuide from './pages/InstallationGuide';
+import Contact from './pages/Contact';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
@@ -84,15 +86,13 @@ const PageManager = () => {
   return null;
 };
 
-// Lazy load pages
-const InstallationGuide = React.lazy(() => import('./pages/InstallationGuide'));
-const Contact = React.lazy(() => import('./pages/Contact'));
+// Legal Pages - Lazy Loaded
 const Privacy = React.lazy(() => import('./pages/Privacy'));
 const Terms = React.lazy(() => import('./pages/Terms'));
 const Cookies = React.lazy(() => import('./pages/Cookies'));
 const Disclaimer = React.lazy(() => import('./pages/Disclaimer'));
 
-// Components reused as pages
+// Components reused as pages - Lazy Loaded
 const Pricing = React.lazy(() => import('./components/Pricing'));
 const FAQ = React.lazy(() => import('./components/FAQ'));
 const Devices = React.lazy(() => import('./components/Devices'));
